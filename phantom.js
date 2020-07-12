@@ -177,7 +177,9 @@ const get_message_text = (arg, done) => {
         var i;
         for (i = 1; i < stemp.length; i = i + 1) {
             console.log(i)
-            result.push(stemp[i].innerText)
+            stemp_text = stemp[i].innerText
+            stemp_text = stemp_text.replace(/(\r\n|\n|\r)/gm, " ")
+            result.push(stemp_text)
         }
     } catch (err) {
         result = err
